@@ -1,0 +1,5 @@
+ username: admin
+ password: Gaz12345!auth
+ host: db_auth_npk
+ port: 6101
+ databaseName: postgres
