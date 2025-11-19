@@ -8,9 +8,9 @@ version: '3.5'
 services:
 
   auth:
-    restart: on-failure
-    build: ./auth
+    build: ./auth_py
     container_name: auth
+    restart: on-failure
     environment:
       - SECRET_KEY=SECRET_KEY
       - PORT=6100
@@ -19,13 +19,11 @@ services:
       - DB_HOST=db_auth_npk
       - DB_PORT=6101
       - DB_NAME=postgres
-      - TIME=100
+      - ACCESS_HOURS=12
     depends_on:
       - db_auth_npk
     networks:
       - internal_net
-    volumes:
-      - auth_vol:/app/migrations
 
   db_auth_npk:
     restart: on-failure
