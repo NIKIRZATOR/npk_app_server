@@ -1,12 +1,11 @@
-FROM dart:3.1.0-sdk
+FROM python:3.12-slim
 
 WORKDIR /app
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
 
-ADD . /app/
+COPY app ./app
 
-RUN dart pub get
-RUN dart pub global activate conduit 4.4.0
-
+ENV PYTHONUNBUFFERED=1
 EXPOSE 6100
-
-ENTRYPOINT [ "dart","pub","run","conduit:conduit","serve","--port","6100" ]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "6100", "--workers", "1"]

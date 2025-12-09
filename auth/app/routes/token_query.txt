@@ -1,0 +1,44 @@
+======
+Sign_up 
+PUT
+http://localhost/auth/token
+{
+  "username": "123",
+  "password": "123123",
+  "surName": "Testov",
+  "name": "Ivan",
+  "patronymicName": "Ivanovich",
+  "jobTitle": "Engineer",
+  "userRole": "admin"
+}
+======
+Sign_in 
+POST
+http://localhost/auth/token
+{
+  "username": "123",
+  "password": "123123"
+}
+======
+Get_user 
+Get
+http://localhost/auth/user
+access_token
+======
+Refresh_tokens
+POST
+http://localhost/auth/token/refresh
+{
+  "refresh": "refreshToken"
+}
+======
+
+======
+
+======
+
+======
+
+======
+
+======

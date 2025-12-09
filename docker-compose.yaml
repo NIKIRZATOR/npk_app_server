@@ -8,7 +8,7 @@ version: '3.5'
 services:
 
   auth:
-    build: ./auth_py
+    build: ./auth
     container_name: auth
     restart: on-failure
     environment:
