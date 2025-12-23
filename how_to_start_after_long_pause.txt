@@ -1,0 +1,8 @@
+Локальная разработка Python — ВСЕГДА внутри папки сервиса
+
+python -m venv venv
+.\venv\Scripts\activate
+
+uvicorn app.main:app --reload (пробовать)
+
+
